@@ -83,6 +83,7 @@
         - consoles
       notify:
         - restart prometheus
+      failed_when: false  # removed from prometheus 3.x release archives
   when:
     - prometheus_binary_local_dir | length == 0
     - not prometheus_skip_install
